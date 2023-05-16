@@ -7,7 +7,7 @@ public class Application {
         EmployeeDao employeeDao = new EmployeeDaoImpl();
         Scanner scanner = new Scanner(System.in);
 
-        employeeDAO.createEmployee(new Employee("Денис", "Маляров", "Man", 40, 3));
+        employeeDao.createEmployee(new Employee("Денис", "Маляров", "Man", 40, 3));
 
         int runSoft = 0;
         while (runSoft != 5) {
@@ -16,11 +16,11 @@ public class Application {
                 case 1:
                     System.out.println("Введите id интересующего сотрудника");
                     int id = scanner.nextInt();
-                    Employee employee = employeeDAO.getEmployeeById(id);
+                    Employee employee = employeeDao.getEmployeeById(id);
                     System.out.println(employee);
                     break;
                 case 2:
-                    List<Employee> employees = employeeDAO.getAllEmployees();
+                    List<Employee> employees = employeeDao.getAllEmployees();
                     for (Employee emp : employees) {
                         System.out.println(emp);
                     }
@@ -28,12 +28,12 @@ public class Application {
                 case 3:
                     System.out.println("Введите id сотрудника для редактирования");
                     id = scanner.nextInt();
-                    employeeDAO.changeEmployeeById(id);
+                    employeeDao.changeEmployeeById(id);
                     break;
                 case 4:
                     System.out.println("Введите id сотрудника которого хотите удалить");
                     id = scanner.nextInt();
-                    employeeDAO.dropEmployeeById(id);
+                    employeeDao.dropEmployeeById(id);
                     break;
                 case 5:
                     break;

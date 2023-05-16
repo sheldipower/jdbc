@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class EmployeeDaoImpl implements EmployeeDao {
 
-    public class EmployeeDAOImpl implements EmployeeDAO {
+    public class EmployeeDAOImpl implements EmployeeDao {
         final String user = "postgres";
         final String password = "s154ig26A192";
         final String url = "jdb";
