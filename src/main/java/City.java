@@ -37,7 +37,7 @@ public class City {
         this.cityId = cityId;
         this.cityName = cityName;
     }
-    public int getCityId() {
+    public List<City> getCityId() {
         return cityId;
     }
     public void setCityId(int cityId) {

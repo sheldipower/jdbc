@@ -48,26 +48,19 @@ public class CityDaoImpl implements CityDao {
         return cities;
     }
 
+
+
     @Override
-    public void updateCityById(int cityId,Employee employee ) {
+    public void updateCityById(int cityId) {
         EntityManager entityManager = HibernateManager.getEntityManager();
-
         entityManager.getTransaction().begin();
-
         City city = entityManager.find(City.class, cityId);
-
-        List<Employee> employees = city.getEmployees();
-        Employee employeeNew = employees.stream()
-                .filter(s-> s.getId() == city.getCityId ())
+        List<City> cities = city.getCityId();
+        City citiesNew = cities.stream()
+                .filter(s-> s.getCityId() == city.getCityId ())
                 .findFirst().get();
-        employeeNew.setFirstName(employee.getFirstName());
-        employeeNew.setLastName(employee.getLastName());
-        employeeNew.setAge(employee.getAge());
-        employeeNew.setGender(employee.getGender());
         entityManager.merge(city);
-
         entityManager.getTransaction().commit();
-
         entityManager.close();
 
     }

@@ -7,7 +7,7 @@ public interface CityDao {
 
     List<City> getAllCities();
 
-    void updateCityById(int cityId, Employee employee);
+    void updateCityById(int cityId);
 
     void deleteCityById(City city);
 }
